@@ -1,0 +1,35 @@
+.points-list {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.points-list h2 {
+  margin-top: 0;
+}
+
+.points-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.points-list-item {
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.points-list-item:hover {
+  background-color: #eee;
+}
+
+.points-list-item.active {
+  background-color: #d0e8ff;
+  border-color: #7cbfff;
+}

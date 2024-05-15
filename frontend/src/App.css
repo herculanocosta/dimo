@@ -1,0 +1,16 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 30%;
+  overflow-y: auto;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+}
+
+.map-container {
+  width: 70%;
+  height: 100%;
+}
