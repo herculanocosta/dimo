@@ -19,7 +19,7 @@ function UploadFile({ onUpload }) {
       const content = JSON.parse(e.target.result);
       try {
         console.log("Uploading file content:", content);  // Add logging for debugging
-        const response = await axios.post('http://127.0.0.1:5000/upload', content);
+        const response = await axios.post('https://dimo-1.onrender.com/upload', content);
         console.log("Response from server:", response.data);  // Add logging for debugging
         // Extract the 'data' array from the JSON response
         onUpload(response.data.data);
