@@ -18,10 +18,9 @@ function UploadFile({ onUpload }) {
     reader.onload = async (e) => {
       const content = JSON.parse(e.target.result);
       try {
-        console.log("Uploading file content:", content);  // Add logging for debugging
-        const response = await axios.post('https://dimo-1.onrender.com/upload', content);
-        console.log("Response from server:", response.data);  // Add logging for debugging
-        // Extract the 'data' array from the JSON response
+        console.log("Uploading file content:", content);
+        const response = await axios.post(`${process.env.https://dimo-1.onrender.com/upload`, content);
+        console.log("Response from server:", response.data);
         onUpload(response.data.data);
       } catch (error) {
         console.error('Error uploading file:', error);
