@@ -1,16 +1,87 @@
+/* Ensure the app container uses flexbox for layout */
 .app-container {
   display: flex;
+  flex-direction: column;
   height: 100vh;
 }
 
+/* Sidebar and map container adjustments */
 .sidebar {
-  width: 30%;
+  width: 100%;
   overflow-y: auto;
-  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   padding: 10px;
 }
 
 .map-container {
-  width: 70%;
+  flex-grow: 1;
   height: 100%;
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 768px) {
+  .app-container {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 30%;
+    border-right: 1px solid #ccc;
+    border-bottom: none;
+    padding: 10px;
+  }
+
+  .map-container {
+    width: 70%;
+    height: 100%;
+  }
+}
+
+/* Points List styling */
+.points-list {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.points-list h2 {
+  margin-top: 0;
+}
+
+.points-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.points-list-item {
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.points-list-item:hover {
+  background-color: #eee;
+}
+
+.points-list-item.active {
+  background-color: #d0e8ff;
+  border-color: #7cbfff;
+}
+
+/* Ensure the map fills the screen on mobile */
+.map-container {
+  height: calc(100vh - 100px); /* Adjust height to leave space for the sidebar */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767px) {
+  .map-container {
+    height: calc(100vh - 200px); /* Adjust height for smaller screens */
+  }
 }
